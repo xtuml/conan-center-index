@@ -1,0 +1,11 @@
+name: Auto-sync
+on:
+  schedule:
+    - cron: '30 05 * * *'
+
+jobs:
+  do_sync:
+    name: Sync
+    runs-on: ubuntu-latest
+    steps:
+      - run: gh repo sync xtuml/conan-center-index -b master
