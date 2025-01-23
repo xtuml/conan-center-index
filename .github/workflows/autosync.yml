@@ -8,5 +8,7 @@ jobs:
   do_sync:
     name: Sync
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
     steps:
       - run: gh repo sync xtuml/conan-center-index -b master
