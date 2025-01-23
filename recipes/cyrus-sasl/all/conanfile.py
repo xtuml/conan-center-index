@@ -164,7 +164,7 @@ class CyrusSaslConan(ConanFile):
     def _build_autotools(self):
         self._patch_sources_autotools()
         autotools = Autotools(self)
-        autotools.configure()
+        autotools.configure(args=['CFLAGS=-Wno-implicit-function-declaration'])
         autotools.make()
 
     @property
